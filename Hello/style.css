@@ -1,0 +1,285 @@
+body{
+    padding: 0;
+    margin: 0;
+    width: 1365px;
+    background: #eaedf1;
+}
+
+.header{
+    height: 296px;
+    margin: 83px 83px 10px 81px;
+}
+.header .text{
+    font-family: 'DejaVu Sans Condensed';
+    font-size: 14px;
+    color: #586879;
+    margin: 10px 0;
+    line-height: 1.8;
+    text-align: justify;
+}
+.title{
+    font-family: 'DejaVu Sans Condensed';
+    font-size: 20px;
+    color: #33495f;
+    font-weight: bold;
+}
+
+/* Стили для блока с аватаром */
+.info{
+    position:relative;
+    width: 320px;
+    height: 220px;
+    float: left;
+    padding: 20px 20px;
+    background: white;
+}
+.me{
+    position:absolute;
+    bottom:0;
+    width:90px;
+    height: 60px;
+}
+.me img{
+    margin: 15px 40px 5px 40px;
+}
+.me p{
+    text-align: center;
+    color: white;
+    font-family: 'DejaVu Sans Condensed';
+    font-size: 14px;
+    text-transform: uppercase;
+    margin: 0;
+}
+.me.one{
+    left: 0;
+    background: #16c4ec;
+}
+.me.two{
+    left: 90px;
+    background: #fa5351;
+}
+.me.three{
+    left: 180px;
+    background: #10cdc1;
+}
+.me.four{
+    left: 270px;
+    background: #33495f;
+}
+
+/* Стили для блока с контактами */
+.about{
+    position: relative;
+    width: 700px;
+    float: right;
+    padding: 25px 25px;
+    background: white;
+    height: 210px;
+}
+.about .one{
+    width: 350px;
+    float: left;
+}
+.about .text.two{
+    margin-right: 10px;
+    width: 250px;
+    float: right;
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 0;
+}
+.social{
+    position:absolute;
+    bottom: 20px;
+    clear: both;
+}
+.social img{
+    margin-top: 10px;
+    margin-right: 30px;
+}
+
+/* Общие стили основного содержания*/
+.content{
+    width: 1200px;
+    margin: 10px 83px 40px 81px;
+}
+.link{
+    display: inline-block;
+    float: right;
+    border-radius: 5px 5px 5px 5px;
+    padding: 5px 0;
+    width: 200px;
+    text-align: center;
+    color: white;
+}
+.content .text{
+    font-family: 'DejaVu Sans Condensed';
+    font-size: 12px;
+    color: #33495f;
+    margin-left: 10px;
+    margin-right: 10px;
+    line-height: 2;
+}
+
+/* Стили для левой стороны основного содержания */
+.content .left{
+    width: 550px;
+    float: left;
+}
+.note{
+    background: white;
+    padding: 20px 20px 30px 20px;
+    margin-bottom: 40px;
+    min-height: 100px;
+    overflow: auto;
+}
+.left .note ul{
+    list-style-image: url("gal.png");
+    margin-bottom: 30px;
+}
+.link.one{
+    background: #16c4ec;
+}
+.link.two{
+    background: #b0bbca;
+}
+.content .left .addtext{
+    font-family: 'DejaVu Sans Condensed';
+    font-size: 14px;
+    color: #9ea7b4;
+    margin-left: 10px;
+    margin-right: 30px;
+}
+.content .left .signtext{
+    font-family: 'DejaVu Sans Condensed';
+    font-size: 14px;
+    color: #04bca6;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+/* Стили для правой стороны основного содержания */
+.content .right{
+    width: 550px;
+    float: right;
+}
+.note2{
+    background: #dbe1e8;
+    padding: 20px 20px 20px 20px;
+    margin-bottom: 30px;
+}
+.link.three{
+    background: #10cdc1;
+}
+.star{
+    display: inline-block;
+    float: right;
+}
+.content .right .addtext{
+    font-family: 'DejaVu Sans Condensed';
+    font-size: 14px;
+    color: #6d8298;
+    margin-left: 10px;
+    margin-right: 30px;
+}
+.content .right .signtext{
+    font-family: 'DejaVu Sans Condensed';
+    font-size: 14px;
+    color: #00b9d8;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.content .right .note2 .signtext{
+    margin-bottom: 10px;
+}
+.hobby{
+    width: 80px;
+    display: inline-block;
+    text-align: center;
+    color: #6e7a88;
+    font-family: 'DejaVu Sans Condensed';
+    font-size: 12px;
+    text-transform: uppercase;
+    margin: 0;
+}
+/* Стили для разделяющей линии основного содержания */
+.line{
+    position: relative;
+    margin: 0;
+}
+.line .year{
+    font-family: 'DejaVu Sans Condensed';
+    font-size: 20px;
+    color: white;
+    position: absolute;
+    bottom: 8px;
+    left: 560px;
+}
+
+/* Стили для нижней цитаты */
+.footer{
+    clear: both;
+    width: 1365px;
+    margin-bottom: 50px;
+}
+.footer .qoute{
+    margin-left: 500px;
+    color: #586879;
+}
+.footer img{
+    margin: 0 10px;
+    position: relative;
+    top: 10px;
+}
+
+/* Стили прогесс бара */
+progress {
+    background-color: #dbe1e8;
+    border: 0;
+    height: 15px;
+    width: 220px;
+    border-radius: 20px 20px 20px 20px;
+    display: block;
+    margin: 10px 10px 10px 0;
+  }
+  progress::-webkit-progress-bar {
+    /* стилевые правила */
+    background-color: #dbe1e8;
+    border: 0;
+    height: 15px;
+    border-radius: 20px 20px 20px 20px;
+  }
+  .progressLeft{
+    position: relative;
+    float: left;
+    margin-top: 30px;
+    color: #6e7a88;
+    font-family: 'DejaVu Sans Condensed';
+    font-size: 12px;
+}
+.progressLeft progress::-webkit-progress-value {
+    /* стилевые правила */
+    background-color: #10cdc1;
+    border: 0;
+    height: 15px;
+    border-radius: 20px 0 0 20px;
+  }
+.progressRight{
+    position: relative;
+    float: right;
+    margin-top: 30px;
+    color: #6e7a88;
+    font-family: 'DejaVu Sans Condensed';
+    font-size: 12px;
+}
+.progressRight progress::-webkit-progress-value {
+    /* стилевые правила */
+    background-color: #16c4ec;
+    border: 0;
+    height: 15px;
+    border-radius: 20px 0 0 20px;
+  }
+.progressLeft img, .progressLeft span, .progressRight img, .progressRight span{
+    color: white;
+    position: absolute;
+}
