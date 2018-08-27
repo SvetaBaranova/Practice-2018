@@ -55,6 +55,7 @@ var bullets = [];
 var enemies = [];
 var explosions = [];
 var megaliths = [];
+var manna = [];
 
 var lastFire = Date.now();
 var gameTime = 0;
@@ -69,6 +70,9 @@ var enemySpeed = 100;
 // The score
 var score = 0;
 var scoreEl = document.getElementById('score');
+
+var mannaCount = 0;
+var mannaEl = document.getElementById('manna');
 
 function update(dt) {
     gameTime += dt;
@@ -87,9 +91,27 @@ function update(dt) {
         });
     }
 
+    if (manna.length<10){
+        var mannaX = Math.random()*(canvas.width-50);
+        var mannaY = Math.random()*(canvas.height-45);
+        var flag = true;
+        for (var i=-0; i<megaliths.length; i++){
+            if (boxCollides([mannaX, mannaY], [55, 45], megaliths[i].pos, megaliths[i].sprite.size)){
+                flag=false;
+            }
+        }
+        if (flag){
+            manna.push({
+                pos: [mannaX, mannaY],
+                sprite: new Sprite('sprites_02.png', [0, 160], [55, 45], 6, [0, 1, 2, 3, 2, 1], null)
+            });
+        }
+    }
+
     checkCollisions();
 
     scoreEl.innerHTML = score;
+    mannaEl.innerHTML = mannaCount;
 };
 
 function handleInput(dt) {
@@ -200,6 +222,10 @@ function updateEntities(dt) {
             i--;
         }
     }
+
+    for (var i=0; i<manna.length; i++){
+        manna[i].sprite.update(dt);
+    }
 }
 
 function collides(x, y, r, b, x2, y2, r2, b2) {
@@ -281,6 +307,14 @@ function checkCollisions() {
             gameOver();
         }
     }
+
+    for (var i=0; i< manna.length; i++){
+        if (boxCollides(manna[i].pos, manna[i].sprite.size, player.pos, player.sprite.size)){
+            manna.splice(i, 1);
+            mannaCount++;
+            break;
+        }
+    }
 }
 
 function checkPlayerBounds() {
@@ -314,6 +348,7 @@ function render() {
     renderEntities(enemies);
     renderEntities(explosions);
     renderEntities(megaliths);
+    renderEntities(manna);
 };
 
 function renderEntities(list) {
@@ -343,10 +378,12 @@ function reset() {
     isGameOver = false;
     gameTime = 0;
     score = 0;
+    manna = 0;
 
     enemies = [];
     bullets = [];
     megaliths = [];
+    manna = [];
 
     player.pos = [50, canvas.height / 2];
 
